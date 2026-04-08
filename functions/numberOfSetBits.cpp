@@ -15,3 +15,41 @@ So, total number of set bits in a and b = 1 + 2 = 3
 o/p -> 3
 
 */
+
+
+# include <iostream>
+using namespace std;
+
+int checkSetBit(int n, int m){
+    int count_n =0;
+    int count_m = 0;
+    
+    while (n!=0){
+        if(n&1){
+            count_n++;
+        }
+        n = n >> 1;
+    }
+
+    while (m!=0){
+        if(m&1){
+            count_m++;
+        }
+        m = m >> 1;
+    }
+
+    return (count_n + count_m);
+}
+
+int main(){
+    int a, b;
+    cout << "Enter the first number 'a' : " << " " ;
+    cin >> a;
+    cout << "Enter the first number 'b' : " << " " ;
+    cin >> b;
+
+    int result = checkSetBit(a, b);
+    cout << "Count of set bits in a = "<< a << " and " <<"b = " << b << " is " << result << endl;
+
+    return 0;
+}
